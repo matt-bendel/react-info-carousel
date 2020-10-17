@@ -15,8 +15,10 @@ export default class CarouselItem extends Component {
     }
 
     render() {
+        let classNames = this.props.position === 'top' ? "list-button-top" : "list-button";
+        classNames += this.props.active ? this.props.position === 'top' ? " active-top" : " active" : '';
         return (
-            <li onClick={this.handleClick} data-position={this.state.index} className={this.props.active ? "list-button active" : "list-button"}>
+            <li onClick={this.handleClick} data-position={this.state.index} className={classNames}>
                 {this.props.icon ?
                     this.props.icon('list-icon-left')
                     :

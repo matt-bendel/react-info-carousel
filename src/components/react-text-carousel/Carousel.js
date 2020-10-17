@@ -4,20 +4,22 @@ import Fade from "react-reveal/Fade";
 import makeCarousel from 'react-reveal/makeCarousel';
 require('./css/carousel.css');
 
-// Props List
-// customStyles
-// rowButtons - [{text: '', iconLeft: ComponentImage, iconRight: Image}, ...]
-// rowContent - [{title: '', text: '', subTitle: ''}, ...]
-// renderText - Custom render function to your own content for each state function _renderItem(index)
-// customCarousel - custom Carousel render function
-// ReactRevealAnimation - maybe
-
 export const Carousel = (props) => {
     const createTexts = () => {
+        let buttonsTop = props.buttonPosition === 'top';
         return props.rowContent.map( (item, index) => {
             let key = 'Fade' + index;
+
+            if (props.renderItem) {
+                return (
+                    <Fade key={key} bottom={!buttonsTop} right={buttonsTop}>
+                        {props.renderItem(index)}
+                    </Fade>
+                );
+            }
+
             return(
-                <Fade key={key} bottom>
+                <Fade key={key} bottom={!buttonsTop} right={buttonsTop}>
                     <div className="text-container">
                         <p className="list-title">
                             {item.title}
@@ -26,9 +28,15 @@ export const Carousel = (props) => {
                             {item.subTitle}
                         </p>
                         <div className="break" />
-                        <p className="list-text">
-                            {item.text}
-                        </p>
+                        {item.isJSX ?
+                            item.text
+                            :
+                            (
+                                <p className="list-text">
+                                    {item.text}
+                                </p>
+                            )
+                        }
                     </div>
                 </Fade>
             );
@@ -48,23 +56,25 @@ export const Carousel = (props) => {
                     index={index}
                     active={index === position}
                     onClick={click}
+                    position={props.buttonPosition}
                 />
             );
         });
 
         return (
-            <ul className="list">
+            <ul className="list" style={props.buttonPosition === 'top' ? {flexDirection: 'row'} : {}}>
                 {buttons}
             </ul>
         );
     }
 
     const CarouselUI = ({children, position, handleClick}) => {
+        let topWidth = 150 * props.rowButtons.length;
         return (
-            <div className="root">
-                <div className="container" style={{alignSelf: 'center'}}>
+            <div className="root" style={props.customStyles ? props.customStyles : {}}>
+                <div className="container" style={props.buttonPosition === 'top' ? {flexDirection: 'column', width: topWidth} : {width: topWidth}}>
                     {createButtons(handleClick, position)}
-                    <div className="full-text">
+                    <div className="full-text" style={{height: props.maxHeight}}>
                         {children}
                     </div>
                 </div>

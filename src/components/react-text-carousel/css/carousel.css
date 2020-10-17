@@ -2,9 +2,7 @@
     color: white;
     height: auto;
     overflow: hidden;
-    margin-left: 35%;
     margin-top: 5%;
-    width: 30%;
     --inactive-color: white;
     --active-text: #ff7eee;
     --bg-primary: #23232e;
@@ -44,7 +42,7 @@
     transition: 500ms;
     min-width: 150px;
     fill: var(--inactive-color);
-    height: 60px;
+    min-height: 60px;
     border-left-color: var(--inactive-color);
     border-left-width: 3px;
     border-left-style: solid;
@@ -67,11 +65,44 @@
     border-left-color: var(--active-text);
 }
 
+.list-button-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    filter: grayscale(100%) opacity(0.7);
+    transition: 500ms;
+    min-width: 150px;
+    fill: var(--inactive-color);
+    min-height: 60px;
+    border-bottom-color: var(--inactive-color);
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+}
+
+.list-button-top:hover {
+    filter: grayscale(0%) opacity(1);
+    background-color: var(--bg-secondary);
+    color: var(--active-text);
+    fill: var(--active-text);
+    border-bottom-color: var(--active-text);
+    cursor: pointer;
+}
+
+.active-top {
+    filter: grayscale(0%) opacity(1);
+    background-color: var(--bg-secondary);
+    color: var(--active-text);
+    fill: var(--active-text);
+    border-bottom-color: var(--active-text);
+}
+
 .list-link {
     display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     font-size: var(--button-font);
     margin-left: 20px;
 }
@@ -116,11 +147,13 @@
 .full-text {
     overflow: hidden;
     position: relative;
+    height: auto;
     width: 100%;
 }
 
 .break {
-    height: 1px;
+    height: 2px;
+    margin-top: 4px;
     margin-left: 10px;
     margin-right: 10px;
     background-color: var(--active-text);

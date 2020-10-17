@@ -7,16 +7,21 @@ require('./css/carousel.css');
 export const Carousel = (props) => {
     const createTexts = () => {
         let buttonsTop = props.buttonPosition === 'top';
-        return props.rowContent.map( (item, index) => {
-            let key = 'Fade' + index;
 
-            if (props.renderItem) {
+        if (props.renderItem) {
+            return props.rowButtons.map((item, index) => {
+                let key = 'Fade' + index;
+
                 return (
                     <Fade key={key} bottom={!buttonsTop} right={buttonsTop}>
                         {props.renderItem(index)}
                     </Fade>
                 );
-            }
+            })
+        }
+
+        return props.rowContent.map( (item, index) => {
+            let key = 'Fade' + index;
 
             return(
                 <Fade key={key} bottom={!buttonsTop} right={buttonsTop}>

@@ -44,7 +44,7 @@ const _renderItem = (index) => {
 function App() {
   return (
     <div className="App" style={{height: 1000}}>
-      <Carousel rowButtons={buttons} rowContent={rowCon} buttonPosition={'top'} maxHeight={300} customStyles={newStyle} />
+      <Carousel rowButtons={buttons} buttonPosition={'top'} maxHeight={200} renderItem={_renderItem} />
     </div>
   );
 }

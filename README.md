@@ -67,7 +67,7 @@ First, import it using the following syntax:
 ```javascript
 import {ReactComponent as MyIcon} from './myicon.svg';
 ```
-Then create the icon component that will be passed in the object:
+Then create the icon component that will be passed to the Carousel:
 ```javascript
 const Icon = (className) => <MyIcon className={className} />;
 ```
@@ -124,6 +124,7 @@ let buttonPosition = 'left'; //top to place buttons at the top
 
 ### maxHeight - Required when buttons are at the top
 This prop sets the height of the textArea. It is required due to how react-reveal handles its carousel.
+#### Format
 
 ```javascript
 let maxHeight = 300; 

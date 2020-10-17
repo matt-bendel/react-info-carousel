@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 require('../css/carousel.css');
 
-class CarouselItem extends Component {
+export default class CarouselItem extends Component {
     constructor(props) {
         super(props);
 
@@ -10,17 +10,20 @@ class CarouselItem extends Component {
         }
     }
 
-    handleClick = () => {
-        this.props.onClick(this.state.index)
+    handleClick = (e) => {
+        this.props.onClick(e);
     }
 
     render() {
         return (
-            <li onClick={this.handleClick} className={this.props.active ? "list-button active" : "list-button"}>
+            <li onClick={this.handleClick} data-position={this.state.index} className={this.props.active ? "list-button active" : "list-button"}>
+                {this.props.icon ?
+                    this.props.icon('list-icon-left')
+                    :
+                    ''
+                }
                 <a className="list-link">{this.props.title}</a>
             </li>
         );
     }
 }
-
-export default CarouselItem;

@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import CarouselItem from "./components/CarouselItem";
+
 require('./css/carousel.css');
 
 // Props List
@@ -18,21 +19,51 @@ class Carousel extends Component {
         this.state = {
             currentIndex: 0,
             nextIndex: 0,
+            currentPos: 0,
         }
     }
 
     changeText = (index) => {
         console.log(index)
-        this.setState({currentIndex: index});
+        this.setState({nextIndex: index}, () => setTimeout(() => {
+            this.setState({currentIndex: index});
+        }, 500));
     }
 
     createTexts = () => {
-        return this.props.rowContent.map( (item) => {
+        let needsUpdate = this.state.currentIndex !== this.state.nextIndex;
+
+        return this.props.rowContent.map( (item, index) => {
+            let classNames = '';
+            let isCurrent = index === this.state.currentIndex;
+            let isNext = index === this.state.nextIndex;
+            let topEnter = this.state.nextIndex < this.state.currentIndex;
+
+            if (needsUpdate && isCurrent) {
+                if (topEnter) {
+                    classNames += 'exit_bottom ';
+                } else {
+                    classNames += 'exit_top '
+                }
+            }
+
+            if (needsUpdate && isNext) {
+                if (topEnter) {
+                    classNames += 'enter_top ';
+                } else {
+                    classNames += 'enter_bottom '
+                }
+            }
+
+            classNames += 'text-container'
+
+
             return(
-                <div className="text-container">
+                <div className={classNames} style={this.state.currentIndex === index  || isNext ? {} : {display: 'none'}}>
                     <p className="list-text">
                         {item.title}
                     </p>
+                    <div className="break" />
                     <p className="list-text">
                         {item.text}
                     </p>

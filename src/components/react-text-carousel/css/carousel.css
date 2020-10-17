@@ -3,7 +3,8 @@
     font-family: 'Open Sans';
     color: white;
     height: auto;
-    width: 40%;
+    overflow: hidden;
+    width: 30%;
     --text-primary: #b6b6b6;
     --text-secondary: #ececec;
     --bg-primary: #23232e;
@@ -16,6 +17,7 @@
     width: 100%;
     display: flex;
     flex-direction: row;
+    overflow: hidden;
 }
 
 .list {
@@ -40,14 +42,14 @@
 .list-button:hover {
     filter: grayscale(0%) opacity(1);
     background-color: var(--bg-secondary);
-    color: #df49a6;
+    color: #ff7eee;
     cursor: pointer;
 }
 
 .active {
     filter: grayscale(0%) opacity(1);
     background-color: var(--bg-secondary);
-    color: #df49a6;
+    color: #ff7eee;
 }
 
 .list-link {
@@ -58,10 +60,26 @@
     align-items: center;
 }
 
+.enter_top {
+    animation: 500ms SlideInTop;
+}
+
+.enter_bottom {
+    animation: 500ms SlideInBottom;
+}
+
+.exit_top {
+
+}
+
+.exit_bottom {
+
+}
+
 .list-text {
     text-align: left;
-    padding: 0;
     margin: 0;
+    padding: 10px;
 }
 
 .text-container {
@@ -71,7 +89,6 @@
 
 .full-text {
     overflow: hidden;
-    margin: 10px;
     width: 100%;
 }
 
@@ -86,4 +103,29 @@
 .fa-primary,
 .fa-secondary {
     transition: 200ms;
+}
+
+.break {
+    height: 1px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #df49a6;
+}
+
+@keyframes SlideInTop {
+    0% {
+        top: -100%;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+@keyframes SlideInBottom {
+    0% {
+        top: 0;
+    }
+    100% {
+        top: -100%;
+    }
 }

@@ -1,37 +1,36 @@
-import React, {Component, useState} from "react";
+import React from "react";
 import CarouselItem from "./components/CarouselItem";
-import Slide from "react-reveal/Slide";
+import Fade from "react-reveal/Fade";
 import makeCarousel from 'react-reveal/makeCarousel';
 require('./css/carousel.css');
 
 // Props List
-// containerStyle
-// overwriteStyle - Style Object - {width: blah, backgroundColor: white, etc..}
+// customStyles
 // rowButtons - [{text: '', iconLeft: ComponentImage, iconRight: Image}, ...]
 // rowContent - [{title: '', text: '', subTitle: ''}, ...]
-// hoverColorText - hexadecimal color - default green
-// hoverColorBackground - hexadecimal color - default black
 // renderText - Custom render function to your own content for each state function _renderItem(index)
+// customCarousel - custom Carousel render function
+// ReactRevealAnimation - maybe
 
 export const Carousel = (props) => {
     const createTexts = () => {
         return props.rowContent.map( (item, index) => {
-            let key = 'slide' + index;
+            let key = 'Fade' + index;
             return(
-                <Slide key={key} bottom>
+                <Fade key={key} bottom>
                     <div className="text-container">
                         <p className="list-title">
                             {item.title}
                         </p>
                         <p className="list-subtitle">
-                            {item.title}
+                            {item.subTitle}
                         </p>
                         <div className="break" />
                         <p className="list-text">
                             {item.text}
                         </p>
                     </div>
-                </Slide>
+                </Fade>
             );
         });
     }

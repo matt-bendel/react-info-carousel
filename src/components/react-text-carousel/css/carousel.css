@@ -1,6 +1,4 @@
 .root {
-    font-size: 16px;
-    font-family: 'Open Sans';
     color: white;
     height: auto;
     overflow: hidden;
@@ -11,6 +9,10 @@
     --active-text: #ff7eee;
     --bg-primary: #23232e;
     --bg-secondary: #141418;
+    --title-font: 20px;
+    --subtitle-font: 18px;
+    --body-font: 16px;
+    --button-font: 18px;
     border-radius: 5px;
 }
 
@@ -70,19 +72,20 @@
     text-align: center;
     justify-content: center;
     align-items: center;
-    font-size: 18px;
-    margin-left: 5px;
+    font-size: var(--button-font);
+    margin-left: 20px;
 }
 
 .list-text {
     text-align: left;
+    font-size: var(--body-font);
     margin: 0;
     padding: 10px;
 }
 
 .list-subtitle {
     text-align: left;
-    font-size: 18px;
+    font-size: var(--subtitle-font);
     margin: 0;
     padding: 0 10px 0;
 }
@@ -91,7 +94,7 @@
     text-align: left;
     margin: 0;
     padding: 10px 10px 0;
-    font-size: 20px;
+    font-size: var(--title-font);
 }
 
 .list-icon-left {
@@ -101,8 +104,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 18px;
-    width: 18px;
+    height: var(--button-font);
+    width: var(--button-font);
 }
 
 .text-container {

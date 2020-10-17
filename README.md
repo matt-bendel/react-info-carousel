@@ -1,68 +1,78 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Text Carousel
 
-## Available Scripts
+React Text Carousel is a library for React apps that allows you to
+create a dynamic, interactive carousel to display information.
 
-In the project directory, you can run:
+You can either pass the Carousel component all of your text, or you
+can render custom content instead!
 
-### `npm start`
+This library depends on react-reveal.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+##Table of Contents
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+-[Installation](#installation)
 
-### `npm test`
+-[Examples](#examples)
+    -[Work Experience](#work-experience)
+    -[Product Descriptions](#product-descriptions)
+    -[Custom Renders](#custom)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-[Props](#props)
 
-### `npm run build`
+##Installation
+To add this package to your project run:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`npm install react-text-carousel`
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+or, if you are using yarn:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`yarn add react-text-carousel`
 
-### `npm run eject`
+##Examples
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+##Props
+Note: If you use a custom render function there is no need to pass rowContent.
+###customStyles
+This prop allows you to override default styles.
+####Format
+```javascript
+let newStyle = {
+    color: 'white',                // Text Color
+    marginLeft: '35%',             // Adjust margin depending on width
+    marginTop: '5%',               // For vertical spacing
+    width: '30%',                  // Width of container
+    '--inactive-color': 'white',   // Inactive color of buttons
+    '--active-text': '#ff7eee',    // Active color of buttons
+    '--bg-primary': '#23232e',     // Primary background color
+    '--bg-secondary': '#141418',   // Background color of active buttons and on hover
+    '--title-font': 20,            // Font size of the title text
+    '--subtitle-font': 18,         // Font size of the subtitle text
+    '--body-font': 16,             // Font size of the body text
+    borderRadius: 5,               // Border radius of container
+}
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+###rowButtons
+This prop provides the buttons with their information. It is an array of objects with keys
+text, for the button text, and icon, for an svg icon of your choosing.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Each icon must be an svg. You can define your icons as follows:
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+First, import it using the following syntax:
+```javascript
+import {ReactComponent as MyIcon} from './myicon.svg';
+```
+Then create the icon component that will be passed in the object:
+```javascript
+const Icon = (className) => <MyIcon className={className} />;
+```
+####Format
+```javascript
+let rowButtons = [
+    {text: 'Item 1', icon: Icon1},
+    {text: 'Item 2', icon: Icon2},
+    {text: 'Item 3', icon: Icon3},
+    {text: 'Item 4', icon: Icon4},
+]
+```

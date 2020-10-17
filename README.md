@@ -8,7 +8,7 @@ can render custom content instead!
 
 This library depends on react-reveal.
 
-##Table of Contents
+## Table of Contents
 
 1. [Installation](#installation)
 
@@ -22,7 +22,7 @@ This library depends on react-reveal.
     
     3c. [Custom Renders](#custom)
 
-##Installation
+## Installation
 To add this package to your project run:
 
 `npm install react-text-carousel`
@@ -31,16 +31,16 @@ or, if you are using yarn:
 
 `yarn add react-text-carousel`
 
-##Props
+## Props
 Note: If you use a custom render function there is no need to pass rowContent.
-###customStyles
+### customStyles
 This prop allows you to override default styles for the top level container. You can modify more than what you see below, those
 are just the only styles explicitly set. 
 
 Only change the width when buttons are on the left.
 
 Note: You only need to modify styles that don't work for you.
-####Format
+#### Format
 ```javascript
 let newStyle = {
     color: 'white',                // Text Color
@@ -57,7 +57,7 @@ let newStyle = {
 ```
 
 
-###rowButtons - Required
+### rowButtons - Required
 This prop provides the buttons with their information. It is an array of objects with keys
 text, for the button text, and icon, for an svg icon of your choosing.
 
@@ -71,7 +71,7 @@ Then create the icon component that will be passed in the object:
 ```javascript
 const Icon = (className) => <MyIcon className={className} />;
 ```
-####Format
+#### Format
 ```javascript
 let rowButtons = [
     {text: 'Item 1', icon: Icon1},
@@ -81,14 +81,14 @@ let rowButtons = [
 ]
 ```
 
-###rowContent - Required if not using a custom render function
+### rowContent - Required if not using a custom render function
 This prop provides the content that is animated. Each element needs to corespond to an
 element of the same index in rowButtons. It is an array of objects with keys
 title, subTitle, and text. If you only want a custom body you can pass a JSX variable
 to the title key and set isJSX to true. This will render your custom body, however you need more
 control you will need to use the renderItem prop.
 
-####Format
+#### Format
 ```javascript
 let rowContent = [
     {title: 'My Title 1', subTitle: 'My sub title', isJSX: false, text: 'My body text'},
@@ -97,11 +97,11 @@ let rowContent = [
     {title: 'My Title 4', subTitle: 'My sub title', isJSX: false, text: 'My body text'},
 ]
 ```
-###renderItem
+### renderItem
 This prop allows you to pass a custom rendering function for the content that is
 animated. The function takes the current index as an argument.
 
-####Format
+#### Format
 ```javascript
 _renderItem = () => {
     return(
@@ -112,20 +112,20 @@ _renderItem = () => {
 }
 ```
 
-###buttonPosition
+### buttonPosition
 This prop allows you to place the buttons at the top, or on the left. The default behavior is to the left.
 
 Note: On mobile buttons automatically move to the top
 
-####Format
+#### Format
 ```javascript
 let buttonPosition = 'left'; //top to place buttons at the top
 ```
 
-###maxHeight - Required when buttons are at the top
+### maxHeight - Required when buttons are at the top
 This prop sets the height of the textArea. It is required due to how react-reveal handles its carousel.
 
 ```javascript
 let maxHeight = 300; 
 ```
-##Examples
+## Examples

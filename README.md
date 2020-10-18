@@ -25,7 +25,7 @@ This library depends on react-reveal.
 ## Installation
 To add this package to your project run:
 
-`npm install react-text-carousel`
+`npm i react-info-carousel`
 
 or, if you are using yarn:
 

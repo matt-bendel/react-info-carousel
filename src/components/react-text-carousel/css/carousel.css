@@ -43,9 +43,9 @@
     min-width: 150px;
     fill: var(--inactive-color);
     min-height: 60px;
-    border-left-color: var(--inactive-color);
-    border-left-width: 3px;
-    border-left-style: solid;
+    border-right-color: var(--inactive-color);
+    border-right-width: 3px;
+    border-right-style: solid;
 }
 
 .list-button:hover {
@@ -53,7 +53,7 @@
     background-color: var(--bg-secondary);
     color: var(--active-text);
     fill: var(--active-text);
-    border-left-color: var(--active-text);
+    border-right-color: var(--active-text);
     cursor: pointer;
 }
 
@@ -62,7 +62,7 @@
     background-color: var(--bg-secondary);
     color: var(--active-text);
     fill: var(--active-text);
-    border-left-color: var(--active-text);
+    border-right-color: var(--active-text);
 }
 
 .list-button-top {

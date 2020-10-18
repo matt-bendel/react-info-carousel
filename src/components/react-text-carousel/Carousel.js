@@ -33,15 +33,9 @@ export const Carousel = (props) => {
                             {item.subTitle}
                         </p>
                         <div className="break" />
-                        {item.isJSX ?
-                            item.text
-                            :
-                            (
-                                <p className="list-text">
-                                    {item.text}
-                                </p>
-                            )
-                        }
+                        <p className="list-text">
+                            {item.text}
+                        </p>
                     </div>
                 </Fade>
             );
@@ -79,7 +73,7 @@ export const Carousel = (props) => {
             <div className="root" style={props.customStyles ? props.customStyles : {}}>
                 <div className="container" style={props.buttonPosition === 'top' ? {flexDirection: 'column', width: topWidth} : {width: topWidth}}>
                     {createButtons(handleClick, position)}
-                    <div className="full-text" style={{height: props.maxHeight}}>
+                    <div className="full-text" style={{minHeight: props.minHeight}}>
                         {children}
                     </div>
                 </div>

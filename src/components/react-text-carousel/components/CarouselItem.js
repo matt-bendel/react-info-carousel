@@ -24,7 +24,7 @@ export default class CarouselItem extends Component {
                     :
                     ''
                 }
-                <a className="list-link">{this.props.title}</a>
+                <a className="list-link" style={this.props.icon ? {} : {marginLeft: 0}}>{this.props.title}</a>
             </li>
         );
     }

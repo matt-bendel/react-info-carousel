@@ -1,4 +1,11 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+/src/components/react-info-carousel/lib
+/src/components/react-info-carousel/node_modules
+/src/components/react-info-carousel/.npmignore
+/src/components/react-info-carousel/.babelrc
+/src/components/react-info-carousel/webpack.config.js
+/src/components/react-info-carousel/package.json
+/src/components/react-info-carousel/package-lock.json
 
 # dependencies
 /node_modules

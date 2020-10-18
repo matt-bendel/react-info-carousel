@@ -9,7 +9,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-reveal": "^1.2.2",
-    "react-scripts": "^3.4.3"
+    "react-scripts": "^3.4.3",
+    "react-text-carousel": "file:src/components/react-text-carousel/react-text-carousel-1.0.0.tgz"
   },
   "scripts": {
     "start": "react-scripts start",

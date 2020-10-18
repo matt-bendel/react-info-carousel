@@ -135,7 +135,7 @@ Below are a couple examples to give you some ideas!
 ```javascript
 import React from "react";
 import "./styles.css";
-import { Carousel } from "./react-text-carousel/Carousel";
+import { Carousel } from "./react-info-carousel/Carousel";
 
 // JSX instead of a string for job 2
 let jobText2 = (
@@ -240,7 +240,7 @@ import "./styles.css";
 import { ReactComponent as FoodIcon } from "./vegan-food.svg";
 import { ReactComponent as MusicIcon } from "./music-note.svg";
 import { ReactComponent as MovieIcon } from "./movie-player.svg";
-import { Carousel } from "./react-text-carousel/Carousel";
+import { Carousel } from "./react-info-carousel/Carousel";
 
 // Creating custom styles
 let newStyle = {

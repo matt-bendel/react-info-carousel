@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {Carousel} from "./components/react-text-carousel/Carousel";
+import {Carousel} from "react-text-carousel";
 import {ReactComponent as FoodIcon} from './vegan-food.svg';
 import {ReactComponent as MusicIcon} from './music-note.svg';
 import {ReactComponent as MovieIcon} from './movie-player.svg';

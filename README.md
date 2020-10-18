@@ -1,8 +1,8 @@
-# React Text Carousel
-** React Text Carousel is not currently responsive on mobile, you will need to find an alternative
+# React Info Carousel
+** React Info Carousel is not currently responsive on mobile, you will need to find an alternative
 solution until an update is published
 
-React Text Carousel is a library for React apps that allows you to
+React Info Carousel is a library for React apps that allows you to
 create a dynamic, interactive carousel to display information.
 
 You can either pass the Carousel component all of your text, or you
@@ -29,7 +29,7 @@ To add this package to your project run:
 
 or, if you are using yarn:
 
-`yarn add react-text-carousel`
+`yarn add react-info-carousel`
 
 ## Props
 Note: If you use a custom render function there is no need to pass rowContent.

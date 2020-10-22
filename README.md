@@ -103,10 +103,10 @@ animated. The function takes the current index as an argument.
 
 #### Format
 ```javascript
-_renderItem = () => {
+_renderItem = (index) => {
     return(
         <div>
-            Hello World
+            {index}
         </div>
     );
 }
